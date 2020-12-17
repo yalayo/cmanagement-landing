@@ -1,5 +1,5 @@
 locals {
-  s3_origin_id = "s3-busqandote.com"
+  s3_origin_id = "s3-cmanagement-landing"
 }
 
 resource "aws_cloudfront_origin_access_identity" "origin_id" {
@@ -103,6 +103,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
 # Load the certificate
 data "aws_acm_certificate" "c" {
-  domain   = "*.DOMAIN_HERE"
+  domain   = "*.busqandote.com"
   statuses = ["ISSUED"]
 }
